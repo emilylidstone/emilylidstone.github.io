@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emily Lidstone — Strategic Operations & Communications Leader</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+:root {
+  --ink:      #1A1A1A;
+  --mist:     #F7F5F2;
+  --sage:     #7A9E8E;
+  --sage-lt:  #EEF5F2;
+  --blush:    #C97B8A;
+  --blush-lt: #FAF0F2;
+  --mid:      #5A5A5A;
+  --rule:     #E0DDD8;
+  --white:    #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--mist);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(247,245,242,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+  z-index: 100;
+  padding: 0 2.5rem;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--mid);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--sage); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 2.5rem 5rem;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.hero-inner { max-width: 700px; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: var(--sage-lt);
+  padding: 0.35rem 0.9rem;
+  border-radius: 2rem;
+  margin-bottom: 1.75rem;
+}
+
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+h1 em {
+  font-style: italic;
+  color: var(--blush);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--mid);
+  max-width: 580px;
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+.hero-sub-2 {
+  font-size: 1rem;
+  color: var(--mid);
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary { background: var(--ink); color: var(--white); }
+.btn-primary:hover { background: #2d2d2d; }
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--rule);
+}
+.btn-secondary:hover { border-color: var(--ink); }
+
+/* STAT BAR */
+.stat-bar {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--white);
+}
+.stat {
+  flex: 1;
+  min-width: 160px;
+  padding: 1.5rem 1.75rem;
+  border-right: 1px solid var(--rule);
+}
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.85rem;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--mid);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* SECTION */
+section { padding: 6rem 2.5rem; }
+.section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 0.85rem;
+}
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.section-intro {
+  font-size: 1rem;
+  color: var(--mid);
+  max-width: 580px;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+/* WHAT I DO */
+#what { background: var(--white); }
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.pillar {
+  padding: 1.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--rule);
+  background: var(--mist);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.pillar:hover {
+  border-color: var(--sage);
+  box-shadow: 0 4px 18px rgba(122,158,142,0.1);
+}
+.pillar-icon {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.pillar h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.pillar-lead {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--sage);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.pillar p {
+  font-size: 0.9rem;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+/* WHERE */
+#where { background: var(--mist); }
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 2.5rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.timeline-item:last-child { border-bottom: none; }
+.t-company {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.t-period {
+  font-size: 0.77rem;
+  color: var(--mid);
+}
+.t-tag {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  border-radius: 2rem;
+  background: var(--sage-lt);
+  color: var(--sage);
+  letter-spacing: 0.04em;
+}
+.t-role {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.t-sub {
+  font-size: 0.82rem;
+  color: var(--mid);
+  margin-bottom: 0.85rem;
+  font-style: italic;
+}
+.t-desc {
+  font-size: 0.92rem;
+  color: var(--mid);
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+.proof {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.proof li {
+  font-size: 0.88rem;
+  color: var(--ink);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.65;
+}
+.proof li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.58em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blush);
+}
+
+/* LOOKING */
+#looking { background: var(--ink); }
+#looking .section-label { color: rgba(255,255,255,0.5); }
+#looking h2 { color: var(--white); }
+#looking .section-intro { color: rgba(255,255,255,0.6); }
+.looking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.looking-item {
+  padding: 1.75rem;
+  background: rgba(255,255,255,0.03);
+  transition: background 0.2s;
+}
+.looking-item:hover { background: rgba(255,255,255,0.07); }
+.looking-item h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+.looking-item p {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+.looking-footnote {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+}
+
+/* WAYS */
+#ways { background: var(--white); }
+.ways-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.way-card {
+  padding: 1.75rem;
+  border-radius: 0.5rem;
+  background: var(--blush-lt);
+  border: 1px solid rgba(201,123,138,0.15);
+  transition: box-shadow 0.2s;
+}
+.way-card:hover { box-shadow: 0 6px 22px rgba(201,123,138,0.13); }
+.way-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.way-card p {
+  font-size: 0.88rem;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+/* CREDENTIALS */
+#credentials { background: var(--mist); }
+.cred-group { margin-bottom: 1.75rem; }
+.cred-group-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 0.75rem;
+}
+.cred-row { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+.cred-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.95rem;
+  border-radius: 2rem;
+  font-size: 0.83rem;
+  font-weight: 500;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+.cred-tag.primary {
+  background: var(--sage-lt);
+  border-color: var(--sage);
+  color: var(--sage);
+  font-weight: 600;
+}
+
+/* QUOTE */
+.quote-section {
+  background: var(--white);
+  padding: 4rem 2.5rem;
+  text-align: center;
+}
+.quote-inner { max-width: 680px; margin: 0 auto; }
+blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.55;
+  position: relative;
+  padding: 0 1.5rem;
+}
+blockquote::before {
+  content: '\201C';
+  font-size: 4rem;
+  color: var(--blush);
+  opacity: 0.3;
+  position: absolute;
+  left: -0.5rem;
+  top: -1rem;
+  font-style: normal;
+  line-height: 1;
+}
+
+/* CONTACT */
+#contact { background: var(--mist); }
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 520px;
+}
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--rule);
+  background: var(--white);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-card:hover {
+  border-color: var(--sage);
+  box-shadow: 0 4px 16px rgba(122,158,142,0.1);
+}
+.contact-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--sage-lt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.contact-card strong { display: block; font-size: 0.88rem; font-weight: 600; }
+.contact-card span { font-size: 0.8rem; color: var(--mid); }
+
+footer {
+  padding: 2rem 2.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--mid);
+  border-top: 1px solid var(--rule);
+  background: var(--mist);
+}
+
+@media (max-width: 720px) {
+  .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .nav-links { display: none; }
+  .stat-bar { flex-direction: column; }
+  .stat { border-right: none; border-bottom: 1px solid var(--rule); }
+  .stat:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Emily Lidstone</span>
+  <ul class="nav-links">
+    <li><a href="#what">What I Do</a></li>
+    <li><a href="#where">Experience</a></li>
+    <li><a href="#looking">Opportunities</a></li>
+    <li><a href="#ways">Ways to Work Together</a></li>
+    <li><a href="#contact">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Strategic Operations &amp; Communications</span>
+    <h1>I help organizations grow<br>without losing their <em>people</em><br>in the process.</h1>
+    <p class="hero-sub">
+      For more than a decade, I have helped organizations navigate complexity, lead change, and deliver results in environments where trust, communication, and execution matter equally.
+    </p>
+    <p class="hero-sub-2">
+      Because sustainable growth doesn't happen when people are pushed harder. It happens when they are aligned, supported, and inspired to move forward together.
+    </p>
+    <div class="hero-cta">
+      <a href="mailto:lidstoneemily@gmail.com" class="btn btn-primary">Let's connect</a>
+      <a href="#where" class="btn btn-secondary">See my work</a>
+    </div>
+    <div class="stat-bar">
+      <div class="stat">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years leading people, operations &amp; communications</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Employees impacted through leadership &amp; transformation</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6→60</div>
+        <div class="stat-label">CSAT improvement in a single fiscal year</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">90</div>
+        <div class="stat-label">Days to independent EBR delivery &amp; full platform fluency</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<section id="what">
+  <div class="section-inner">
+    <p class="section-label">What I do</p>
+    <h2>Four things I do consistently well.</h2>
+    <p class="section-intro">My work has always lived where people, process, and performance meet. These are the areas where I show up most distinctively and where I tend to create the most visible impact.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🧭</div>
+        <h3>Strategic Operations</h3>
+        <p class="pillar-lead">I bring structure to ambitious goals.</p>
+        <p>Whether improving a process, leading a transformation initiative, or building a new operating model, I create the systems, accountability, and alignment required to turn ideas into measurable results. I connect the dots between strategy and execution so organizations can move forward with confidence.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">💬</div>
+        <h3>Organizational Communications</h3>
+        <p class="pillar-lead">I help people understand what matters and why.</p>
+        <p>From executive briefings and stakeholder engagement to large-scale change initiatives, I translate complexity into clarity. My approach is thoughtful, direct, and rooted in building trust at every level of the organization.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌱</div>
+        <h3>People-Centred Leadership</h3>
+        <p class="pillar-lead">I believe high performance and humanity belong together.</p>
+        <p>My leadership style is grounded in transparency, coaching, accountability, and genuine care for the people I lead. I create environments where individuals feel supported, challenged, and empowered to contribute at their highest level.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🔄</div>
+        <h3>Transformation &amp; Change</h3>
+        <p class="pillar-lead">Change succeeds when people believe in it.</p>
+        <p>Throughout my career, I have led teams through operational, cultural, and organizational transformation by helping people understand the vision, navigate uncertainty, and feel equipped for what comes next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE -->
+<section id="where">
+  <div class="section-inner">
+    <p class="section-label">Where I've done it</p>
+    <h2>The work, in context.</h2>
+    <p class="section-intro">Each chapter of my career has added a new dimension. Together they form a perspective that is genuinely difficult to replicate.</p>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div>
+          <div class="t-company">Indeed</div>
+          <div class="t-period">2024 — Present</div>
+          <span class="t-tag">Global Tech · SaaS</span>
+        </div>
+        <div>
+          <div class="t-role">Manager, Client Optimization</div>
+          <div class="t-sub">Global Technology &amp; Customer Success</div>
+          <p class="t-desc">At Indeed, I lead strategic client relationships and operational initiatives within a fast-moving global technology environment. I partner across functions to solve complex problems, improve outcomes, and create exceptional experiences for both customers and internal stakeholders.</p>
+          <ul class="proof">
+            <li>Built trusted relationships across Product, Engineering, Sales, and Operations within the first 90 days and quickly became a strategic partner for clients and colleagues alike</li>
+            <li>Conduct executive business reviews that transform performance data into actionable business decisions</li>
+            <li>Lead cross-functional initiatives that balance customer needs, operational priorities, and business objectives</li>
+            <li>Coach and develop team members through a collaborative leadership approach focused on growth and ownership</li>
+            <li>Leverage AI and emerging technologies including Claude, ChatGPT, Gemini, Tableau, and Salesforce to improve workflows, communication, and decision-making</li>
+            <li>Serve as a steady, solutions-oriented leader in an environment defined by rapid change and continuous evolution</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="t-company">Intact Financial</div>
+          <div class="t-period">2016 — 2024</div>
+          <span class="t-tag">Regulated Financial Services</span>
+        </div>
+        <div>
+          <div class="t-role">Progressive Leadership Roles</div>
+          <div class="t-sub">Claims, Investigations, Quality Assurance &amp; Customer Experience</div>
+          <p class="t-desc">Over eight years, I progressed through increasingly complex leadership roles across one of Canada's largest insurers. This experience shaped my ability to lead through ambiguity, manage risk, build high-performing teams, and drive meaningful organizational change.</p>
+          <ul class="proof">
+            <li>Led an operational transformation that increased customer satisfaction from 6% to 60% within a single fiscal year</li>
+            <li>Managed and developed teams through significant organizational and process change in a highly regulated environment</li>
+            <li>Selected for a national leadership development programme focused on organizational effectiveness and enterprise transformation</li>
+            <li>Designed coaching and quality assurance frameworks that improved customer outcomes by 25%</li>
+            <li>Protected more than $1.5 million in organizational resources through disciplined investigation, risk management, and decision-making</li>
+            <li>Built a reputation for balancing performance expectations with empathy, fairness, and trust</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="t-company">Ethnic Diversity Alliance</div>
+          <div class="t-period">2019 — Present</div>
+          <span class="t-tag">Community Leadership</span>
+        </div>
+        <div>
+          <div class="t-role">Co-VP, Communications</div>
+          <div class="t-sub">Seven Years of Parallel Leadership</div>
+          <p class="t-desc">Alongside my corporate career, I have spent years helping build inclusive communities through strategic communications, engagement, and leadership.</p>
+          <ul class="proof">
+            <li>Increased membership by 80% through intentional communications and community-building strategies</li>
+            <li>Improved engagement across thousands of employees through targeted campaigns, events, and storytelling initiatives</li>
+            <li>Led communications planning, executive messaging, town halls, and organizational engagement efforts</li>
+            <li>Partnered with senior leaders to advance inclusion, belonging, and employee connection across the organization</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="t-company">Poshworthy</div>
+          <div class="t-period">2026 — Present</div>
+          <span class="t-tag">Founder · Entrepreneur</span>
+        </div>
+        <div>
+          <div class="t-role">Founder &amp; Editorial Director</div>
+          <div class="t-sub">Brand Strategy &amp; Content Platform</div>
+          <p class="t-desc">Poshworthy is my entrepreneurial venture focused on helping ambitious women create success that feels both meaningful and sustainable. Through content, community, and strategic storytelling, I explore leadership, personal growth, intentional living, and the evolving definition of success for modern women.</p>
+          <ul class="proof">
+            <li>Built the brand, operating model, content strategy, and growth infrastructure from the ground up</li>
+            <li>Developed scalable systems using AI and automation to support content creation and business operations</li>
+            <li>Created thought leadership content focused on leadership, ambition, wellness, and personal development</li>
+            <li>Continually experiment with emerging technologies, communications strategies, and audience-building approaches</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOOKING -->
+<section id="looking">
+  <div class="section-inner">
+    <p class="section-label">What I'm looking for</p>
+    <h2>The right next chapter.</h2>
+    <p class="section-intro">I am seeking Senior Manager and Director-level opportunities where leadership, strategy, communications, and operations genuinely intersect.</p>
+    <div class="looking-grid">
+      <div class="looking-item">
+        <h4>Mission-driven organizations</h4>
+        <p>Companies with a clear purpose and a genuine commitment to the people building it.</p>
+      </div>
+      <div class="looking-item">
+        <h4>Growth and transformation</h4>
+        <p>Organizations navigating change who understand that successful execution depends as much on people as it does on process.</p>
+      </div>
+      <div class="looking-item">
+        <h4>Remote-first or thoughtfully hybrid</h4>
+        <p>Environments that have figured out how to build trust and culture without requiring presence as proof of productivity.</p>
+      </div>
+      <div class="looking-item">
+        <h4>Ambitious and collaborative</h4>
+        <p>Teams that value accountability and empathy in equal measure and invest in strong leadership and thoughtful communication.</p>
+      </div>
+      <div class="looking-item">
+        <h4>Technology, fintech &amp; insurtech</h4>
+        <p>The intersection where my background is most differentiated and where I can contribute most immediately.</p>
+      </div>
+      <div class="looking-item">
+        <h4>Room to lead and build</h4>
+        <p>Roles where operational leadership, strategic communications, and people development sit at the centre of the mandate.</p>
+      </div>
+    </div>
+    <p class="looking-footnote">Especially interested in customer experience, communications, strategic operations, enablement, and organizational transformation.</p>
+  </div>
+</section>
+
+<!-- WAYS -->
+<section id="ways">
+  <div class="section-inner">
+    <p class="section-label">Ways to work together</p>
+    <h2>What I bring to the table.</h2>
+    <p class="section-intro">I am not just a title. Here is how the organizations I have worked with would describe what I actually contribute.</p>
+    <div class="ways-grid">
+      <div class="way-card">
+        <h3>Strategic Operator</h3>
+        <p>I bring clarity, structure, and momentum to complex challenges. I identify opportunities, build practical solutions, and create alignment across stakeholders to drive meaningful progress — without unnecessary complexity getting in the way.</p>
+      </div>
+      <div class="way-card">
+        <h3>Trusted Communicator</h3>
+        <p>I help organizations communicate with purpose. Whether addressing executives, customers, or employees, I create messages that build understanding, trust, and engagement — and make it easier for people to act with confidence.</p>
+      </div>
+      <div class="way-card">
+        <h3>Transformation Leader</h3>
+        <p>I lead change in a way that people can actually follow. By combining clear communication, strong execution, and genuine empathy, I help organizations move forward together rather than just announcing a new direction.</p>
+      </div>
+      <div class="way-card">
+        <h3>Relationship Builder</h3>
+        <p>I believe trust is one of the most valuable assets an organization can have. I build the kinds of relationships that create real collaboration, strengthen teams, and support long-term success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="quote-inner">
+    <blockquote>
+      The strongest organizations are built when people feel connected to the mission, confident in the direction, and empowered to contribute their best work.
+    </blockquote>
+  </div>
+</div>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="section-inner">
+    <p class="section-label">Credentials</p>
+    <h2>The formal stuff.</h2>
+    <p class="section-intro">A decade of experience backed by credentials that reflect genuine investment in the disciplines I practice.</p>
+    <div class="cred-group">
+      <div class="cred-group-label">Designations &amp; Certifications</div>
+      <div class="cred-row">
+        <span class="cred-tag primary">Chartered Insurance Professional (CIP)</span>
+        <span class="cred-tag primary">Advanced Teaching Techniques Certification</span>
+        <span class="cred-tag primary">TICO Certification — In Progress</span>
+      </div>
+    </div>
+    <div class="cred-group">
+      <div class="cred-group-label">Education</div>
+      <div class="cred-row">
+        <span class="cred-tag">BA Honours, Sociology &amp; Criminology</span>
+        <span class="cred-tag">University of Toronto, Mississauga</span>
+      </div>
+    </div>
+    <div class="cred-group">
+      <div class="cred-group-label">Technology &amp; Analytics</div>
+      <div class="cred-row">
+        <span class="cred-tag">Salesforce</span>
+        <span class="cred-tag">Tableau</span>
+        <span class="cred-tag">Power BI</span>
+        <span class="cred-tag">Claude</span>
+        <span class="cred-tag">ChatGPT</span>
+        <span class="cred-tag">Gemini</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Let's connect</p>
+    <h2>I would love to hear from you.</h2>
+    <p class="section-intro">Whether you have a role in mind, want to explore a conversation, or simply want to connect — I am always open to a genuine exchange.</p>
+    <div class="contact-cards">
+      <a href="mailto:lidstoneemily@gmail.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <strong>Email me directly</strong>
+          <span>lidstoneemily@gmail.com</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/emily-lidstone" target="_blank" class="contact-card">
+        <div class="contact-icon">💼</div>
+        <div>
+          <strong>Connect on LinkedIn</strong>
+          <span>linkedin.com/in/emily-lidstone</span>
+        </div>
+      </a>
+      <a href="http://www.poshworthy.com" target="_blank" class="contact-card">
+        <div class="contact-icon">✨</div>
+        <div>
+          <strong>Visit Poshworthy</strong>
+          <span>poshworthy.com</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Emily Lidstone &nbsp;·&nbsp; Ontario, Canada &nbsp;·&nbsp; Strategic Operations &amp; Communications Leader
+</footer>
+
+</body>
+</html>
